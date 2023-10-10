@@ -1,18 +1,21 @@
 package com.example.common.bean;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
+@EqualsAndHashCode
 @NoArgsConstructor
-@AllArgsConstructor
 public class RoutePath {
     private RoutePoint from;
     private RoutePoint to;
     private double progress;
+
+    public RoutePath(RoutePoint from, RoutePoint to, double progress) {
+        this.from = from;
+        this.to = to;
+        this.progress = progress;
+    }
 
     public void addProgress(double speed) {
         progress += speed;

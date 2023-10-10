@@ -4,6 +4,7 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -11,11 +12,11 @@ import java.util.List;
 @EqualsAndHashCode
 public class Station {
     private String name;
-    private List<String> cars;
+    private List<String> cars = new ArrayList<>();
     private int x;
     private int y;
 
-    private void addCar(String carName) {
+    public void addCar(String carName) {
         if (cars.contains(carName)) {
             cars.set(cars.indexOf(carName), carName);
         } else {
@@ -23,7 +24,7 @@ public class Station {
         }
     }
 
-    private void removeCar(String carName) {
+    public void removeCar(String carName) {
         cars.remove(carName);
     }
 }

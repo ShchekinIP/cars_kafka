@@ -19,15 +19,19 @@ public class Car {
     private double y;
     private double angle;
 
-    private boolean noBusy() {
+    public boolean noBusy() {
         return !busy;
+    }
+
+    public boolean hasRoute() {
+        return route != null;
     }
 
     private void calculatePosition(RoutePath routePath) {
         double t = routePath.getProgress() / 100;
 
-        double toX = (1 - t) * routePath.getFrom().getX() + t*routePath.getTo().getX();
-        double toY = (1 - t) * routePath.getFrom().getY() + t*routePath.getTo().getY();
+        double toX = (1 - t) * routePath.getFrom().getX() + t * routePath.getTo().getX();
+        double toY = (1 - t) * routePath.getFrom().getY() + t * routePath.getTo().getY();
 
         double deltaX = this.x - toX;
         double deltaY = this.y - toY;

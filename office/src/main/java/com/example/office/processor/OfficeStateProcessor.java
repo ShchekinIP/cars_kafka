@@ -1,4 +1,4 @@
-package com.example.office.processors;
+package com.example.office.processor;
 
 import com.example.common.messages.OfficeStateMessage;
 import com.example.common.messages.StationStateMessage;

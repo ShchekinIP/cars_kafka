@@ -21,7 +21,7 @@ public class OfficeSocketConfig implements WebSocketConfigurer {
     @Override
     public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
         registry
-                .addHandler(new OfficeSocketHandler(kafkaTemplate, sessionCache, messageConverter))
+                .addHandler(new OfficeSocketHandler(kafkaTemplate, sessionCache, messageConverter), "/websocket")
                 .setAllowedOrigins("*");
 
     }

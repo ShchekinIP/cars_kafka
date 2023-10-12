@@ -27,7 +27,7 @@ public class Car {
         return route != null;
     }
 
-    private void calculatePosition(RoutePath routePath) {
+    public void calculatePosition(RoutePath routePath) {
         double t = routePath.getProgress() / 100;
 
         double toX = (1 - t) * routePath.getFrom().getX() + t * routePath.getTo().getX();
